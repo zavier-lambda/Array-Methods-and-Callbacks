@@ -9,7 +9,6 @@ const funcs = require('../index.js')
 
 describe('getFinals', () => {
   const result = funcs.getFinals(data)
-  console.log(result)
 
   it('returns the right number of matches', () => {
     expect(result).toHaveLength(20)
@@ -42,7 +41,6 @@ describe('getYears', () => {
 
 describe('getWinners', () => {
   const result = funcs.getWinners(data, funcs.getFinals)
-  console.log(result)
 
   it('returns the right number of countries', () => {
     expect(result).toHaveLength(20)
