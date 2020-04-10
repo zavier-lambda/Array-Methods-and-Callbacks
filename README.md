@@ -55,7 +55,7 @@ Using VSCode and a Command Line:
 3. `cd` into your newly cloned repository.
 4. Create a new branch by typing `git checkout -b <firstName-lastName>`.
 5. Install dependencies by typing `npm install`.
-6. Run tests by typing `npm run test:watch`.
+6. Run tests by typing `npm test`.
 7. Work on your branch, push commits and create PR as usual.
 
 ### Task 2: Minimum Viable Product

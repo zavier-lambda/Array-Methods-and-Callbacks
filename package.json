@@ -1,0 +1,11 @@
+{
+  "name": "array-methods-and-callbacks",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

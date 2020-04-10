@@ -1,5 +1,4 @@
-import {data} from "data.js";
-
+const data = require("./data.js");
 // ⚽️ M  V P ⚽️ //
 
 /* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data 
