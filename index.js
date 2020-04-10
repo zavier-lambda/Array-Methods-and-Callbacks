@@ -12,19 +12,19 @@ const data = require("./data.js");
 (e) Winner of 2014 world cup  */
 
 
-/* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
+/* Task 2: Create a function called  getFinals that returns an array of objects with only finals data */
 
-function getFinals(data) {
+function getFinals() {
   /* code here */
   const result = data.filter(game => game.Stage === 'Final')
   return result
 }
 
-/* Task 3: Implement a higher-order function called `getYears` that accepts `data` and the callback function `getFinals` as arguments, and returns an array called `years` containing all of the years in the dataset */
+/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals` as an argument, and returns an array containing all of the years in the dataset */
 
-function getYears(data, cb) {
+function getYears(getFinals) {
   /* code here */
-  const result = cb(data).map(match => match.Year)
+  const result = getFinals().map(match => match.Year)
   return result
 }
 
@@ -44,15 +44,21 @@ function getWinners(data, cb) {
   return winnerCountries
 }
 
-/* Task 5: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
+/* Task 5: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!"
 
-Parameters: 
+Parameters:
+ * data
  * callback function getWinners
  * callback function getYears
  */
 
-function getAllWinners(/* code here */) {
+function getAllWinners(data, getWinners, getYears) {
+  const winners = getWinners(data)
+  const years = getYears(winners)
 
+  return winners.map((country, idx) => {
+    return `In ${years[idx]}, ${country} won the world cup!`
+  })
 }
 
 
@@ -61,7 +67,6 @@ function getAllWinners(/* code here */) {
 Hint: use `.reduce` */
 
 function getCountryWins(/* code here */) {
-
   /* code here */
 
 }
