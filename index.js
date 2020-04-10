@@ -15,23 +15,33 @@ const data = require("./data.js");
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
 function getFinals(data) {
-
+  /* code here */
+  const result = data.filter(game => game.Stage === 'Final')
+  return result
 }
 
-/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
+/* Task 3: Implement a higher-order function called `getYears` that accepts `data` and the callback function `getFinals` as arguments, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(cb) {
-
-    /* code here */
-
+function getYears(data, cb) {
+  /* code here */
+  const result = cb(data).map(match => match.Year)
+  return result
 }
 
-/* Task 4: Impliment a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
+/* Task 4: Implement a higher-order function called `getWinners`, that accepts `data` and the callback function `getFinals()` as arguments and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */
 
-function getWinners(/* code here */) {
-
-    /* code here */
-
+function getWinners(data, cb) {
+  /* code here */
+  const finals = cb(data)
+  const winnerCountries = finals.map(match => {
+    if (match['Win conditions']) {
+      return match['Win conditions'].split(' ')[0]
+    }
+    return match['Home Team Goals'] > match['Away Team Goals']
+      ? match['Home Team Name']
+      : match['Away Team Name']
+  })
+  return winnerCountries
 }
 
 /* Task 5: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
@@ -52,7 +62,7 @@ Hint: use `.reduce` */
 
 function getCountryWins(/* code here */) {
 
-    /* code here */
+  /* code here */
 
 }
 
@@ -61,7 +71,7 @@ function getCountryWins(/* code here */) {
 
 function getGoals(/* code here */) {
 
-    /* code here */
+  /* code here */
 
 }
 
@@ -70,7 +80,7 @@ function getGoals(/* code here */) {
 
 function badDefense(/* code here */) {
 
-    /* code here */
+  /* code here */
 
 }
 
@@ -79,7 +89,7 @@ function badDefense(/* code here */) {
 
 function getAverageGoals(/* code here */) {
 
-    /* code here */
+  /* code here */
 
 }
 
@@ -96,12 +106,12 @@ function getAverageGoals(/* code here */) {
 /// END OF CHALLENGE ///
 /// END OF CHALLENGE ///
 module.exports = {
-    getFinals,
-    getYears,
-    getWinners,
-    getAllWinners,
-    getCountryWins,
-    getGoals,
-    badDefense,
-    getAverageGoals,
+  getFinals,
+  getYears,
+  getWinners,
+  getAllWinners,
+  getCountryWins,
+  getGoals,
+  badDefense,
+  getAverageGoals,
 }
