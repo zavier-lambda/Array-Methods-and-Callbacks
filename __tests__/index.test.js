@@ -9,16 +9,16 @@ const funcs = require('../index.js')
 
 const {
   getFinals,
-  getYears,
-  getWinners,
-  getAllWinners,
-  getCountryWins,
-  getGoals,
-  badDefense,
-  getAverageGoals,
+  getFinalsYears,
+  getFinalsWinners,
+  getWinnersByYear,
+  // getCountryWins,
+  // getGoals,
+  // badDefense,
+  // getAverageGoals,
 } = funcs
 
-describe('getFinals', () => {
+describe('Task 1: getFinals', () => {
   const result = getFinals()
 
   it('returns the right number of matches', () => {
@@ -33,8 +33,8 @@ describe('getFinals', () => {
   })
 })
 
-describe('getYears', () => {
-  const result = getYears(getFinals)
+describe('Task 2: getFinalsYears', () => {
+  const result = getFinalsYears()
 
   it('returns the right number of years', () => {
     expect(result).toHaveLength(20)
@@ -50,8 +50,8 @@ describe('getYears', () => {
   })
 })
 
-describe('getWinners', () => {
-  const result = getWinners(data, getFinals)
+describe('Task 3: getFinalsWinners', () => {
+  const result = getFinalsWinners()
 
   it('returns the right number of countries', () => {
     expect(result).toHaveLength(20)
@@ -72,8 +72,8 @@ describe('getWinners', () => {
   })
 })
 
-// describe('getAllWinners', () => {
-//   const result = getAllWinners(data, getWinners, getYears)
+// describe('Task 4: getAllWinners', () => {
+//   const result = getAllWinners(data, getFinalsWinners, getFinalsYears)
 //   console.log(result)
 //   it('returns the right number of countries', () => {
 //     expect(result).toHaveLength(20)
