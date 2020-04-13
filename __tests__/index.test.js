@@ -11,7 +11,7 @@ const {
   getFinals,
   getFinalsYears,
   getFinalsWinners,
-  getWinnersByYear,
+  getFinalsWinnersByYear,
   // getCountryWins,
   // getGoals,
   // badDefense,
@@ -21,10 +21,10 @@ const {
 describe('Task 1: getFinals', () => {
   const result = getFinals()
 
-  it('returns the right number of matches', () => {
+  it('returns the right number of games', () => {
     expect(result).toHaveLength(20)
   })
-  it('matches returned are finals', () => {
+  it('games returned are finals', () => {
     result.forEach(match => {
       expect(match).toMatchObject({
         Stage: 'Final'
@@ -72,10 +72,9 @@ describe('Task 3: getFinalsWinners', () => {
   })
 })
 
-// describe('Task 4: getAllWinners', () => {
-//   const result = getAllWinners(data, getFinalsWinners, getFinalsYears)
-//   console.log(result)
-//   it('returns the right number of countries', () => {
-//     expect(result).toHaveLength(20)
-//   })
-// })
+describe('Task 4: getWinnersByYear', () => {
+  const result = getFinalsWinnersByYear()
+  it('returns the right number of countries', () => {
+    expect(result).toHaveLength(20)
+  })
+})

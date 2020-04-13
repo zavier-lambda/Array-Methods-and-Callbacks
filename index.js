@@ -44,12 +44,12 @@ function getFinalsWinners() {
   return winnerCountries
 }
 
-/* Task 4: Implement a function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!"
+/* Task 4: Implement a function called `getFinalsWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!"
  */
 
-function getWinnersByYear(getWinners, getFinalsYears) {
-  const winners = getWinners()
-  const years = getFinalsYears(winners)
+function getFinalsWinnersByYear() {
+  const winners = getFinalsWinners()
+  const years = getFinalsYears()
 
   return winners.map((country, idx) => {
     return `In ${years[idx]}, ${country} won the world cup!`
@@ -109,7 +109,7 @@ module.exports = {
   getFinals,
   getFinalsYears,
   getFinalsWinners,
-  getWinnersByYear,
+  getFinalsWinnersByYear,
   getCountryWins,
   getGoals,
   badDefense,
