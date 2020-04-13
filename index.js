@@ -28,6 +28,7 @@ function getFinalsYears() {
   return result
 }
 
+
 /* Task 3: Implement a function called `getFinalsWinners` that returns an array of strings which are the names of the country that won each final */
 
 function getFinalsWinners() {
@@ -43,6 +44,7 @@ function getFinalsWinners() {
   })
   return winnerCountries
 }
+
 
 /* Task 4: Implement a function called `getFinalsWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!"
  */
