@@ -12,7 +12,7 @@ const {
   getFinalsYears,
   getFinalsWinners,
   getFinalsWinnersByYear,
-  // getCountryWins,
+  getCountryWins,
   // getGoals,
   // badDefense,
   // getAverageGoals,
@@ -74,7 +74,38 @@ describe('Task 3: getFinalsWinners', () => {
 
 describe('Task 4: getWinnersByYear', () => {
   const result = getFinalsWinnersByYear()
-  it('returns the right number of countries', () => {
+  it('returns the right number of strings', () => {
     expect(result).toHaveLength(20)
+  })
+})
+
+describe('Task 5: getCountryWins', () => {
+  it('returns 5 wins for Brazil', () => {
+    const result = getCountryWins('Brazil')
+    expect(result).toBe(5)
+  })
+  it('returns 1 win for Spain', () => {
+    const result = getCountryWins('Spain')
+    expect(result).toBe(1)
+  })
+  it('returns 1 win for England', () => {
+    const result = getCountryWins('England')
+    expect(result).toBe(1)
+  })
+  it('returns 3 wins for Germany FR', () => {
+    const result = getCountryWins('Germany FR')
+    expect(result).toBe(3)
+  })
+  it('returns 2 wins for Germany', () => {
+    const result = getCountryWins('Germany')
+    expect(result).toBe(2)
+  })
+  it('returns 4 wins for Italy', () => {
+    const result = getCountryWins('Italy')
+    expect(result).toBe(4)
+  })
+  it('returns 2 wins for Argentina', () => {
+    const result = getCountryWins('Argentina')
+    expect(result).toBe(2)
   })
 })

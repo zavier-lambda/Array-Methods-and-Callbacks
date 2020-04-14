@@ -59,13 +59,18 @@ function getFinalsWinnersByYear() {
 }
 
 
-/* Task 5: Create a function called `getCountryWins` that takes the parameters `data` and `country code` and returns the number of world cup wins that country has had. 
+/* Task 5: Create a function called `getCountryWins` that takes a country name as its argument, and returns the number of world cup wins that country has had. 
 
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(country/* code here */) {
   /* code here */
-
+  return getFinalsWinners().reduce((acc, winner) => {
+    if (winner === country) {
+      return acc + 1
+    }
+    return acc
+  }, 0)
 }
 
 
