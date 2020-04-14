@@ -22,7 +22,7 @@ describe('Task 1: getFinals', () => {
   const result = getFinals()
 
   it('returns the right number of games', () => {
-    expect(result).toHaveLength(20)
+    expect(result).toHaveLength(19)
   })
   it('games returned are finals', () => {
     result.forEach(match => {
@@ -37,7 +37,7 @@ describe('Task 2: getFinalsYears', () => {
   const result = getFinalsYears()
 
   it('returns the right number of years', () => {
-    expect(result).toHaveLength(20)
+    expect(result).toHaveLength(19)
   })
   it('returns the right years', () => {
     expect(result).toEqual(expect.arrayContaining([
@@ -45,7 +45,7 @@ describe('Task 2: getFinalsYears', () => {
       1958, 1962, 1966, 1970,
       1974, 1978, 1982, 1986,
       1990, 1994, 1998, 2002,
-      2006, 2010, 2014, 2014,
+      2006, 2010, 2014,
     ]))
   })
 })
@@ -54,7 +54,7 @@ describe('Task 3: getFinalsWinners', () => {
   const result = getFinalsWinners()
 
   it('returns the right number of countries', () => {
-    expect(result).toHaveLength(20)
+    expect(result).toHaveLength(19)
   })
   it('returns the right countries', () => {
     expect(result).toEqual(expect.arrayContaining([
@@ -67,15 +67,39 @@ describe('Task 3: getFinalsWinners', () => {
       'Germany FR', 'Brazil',
       'France', 'Brazil',
       'Italy', 'Spain',
-      'Germany', 'Germany'
+      'Germany',
     ]))
   })
 })
 
 describe('Task 4: getWinnersByYear', () => {
   const result = getFinalsWinnersByYear()
+  console.log(result)
   it('returns the right number of strings', () => {
-    expect(result).toHaveLength(20)
+    expect(result).toHaveLength(19)
+  })
+  it('returns the right strings', () => {
+    expect(result).toEqual(expect.arrayContaining([
+      'In 1930, Uruguay won the world cup!',
+      'In 1934, Italy won the world cup!',
+      'In 1938, Italy won the world cup!',
+      'In 1954, Germany FR won the world cup!',
+      'In 1958, Brazil won the world cup!',
+      'In 1962, Brazil won the world cup!',
+      'In 1966, England won the world cup!',
+      'In 1970, Brazil won the world cup!',
+      'In 1974, Germany FR won the world cup!',
+      'In 1978, Argentina won the world cup!',
+      'In 1982, Italy won the world cup!',
+      'In 1986, Argentina won the world cup!',
+      'In 1990, Germany FR won the world cup!',
+      'In 1994, Brazil won the world cup!',
+      'In 1998, France won the world cup!',
+      'In 2002, Brazil won the world cup!',
+      'In 2006, Italy won the world cup!',
+      'In 2010, Spain won the world cup!',
+      'In 2014, Germany won the world cup!',
+    ]))
   })
 })
 
@@ -96,9 +120,9 @@ describe('Task 5: getCountryWins', () => {
     const result = getCountryWins('Germany FR')
     expect(result).toBe(3)
   })
-  it('returns 2 wins for Germany', () => {
+  it('returns 1 win for Germany', () => {
     const result = getCountryWins('Germany')
-    expect(result).toBe(2)
+    expect(result).toBe(1)
   })
   it('returns 4 wins for Italy', () => {
     const result = getCountryWins('Italy')

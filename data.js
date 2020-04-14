@@ -18721,26 +18721,4 @@ module.exports = [
       "Home Team Initials": "BRA",
       "Away Team Initials": "NED"
     },
-    {
-      "Year": 2014,
-      "Datetime": "13 Jul 2014 - 16:00",
-      "Stage": "Final",
-      "Stadium": "Estadio do Maracana",
-      "City": "Rio De Janeiro",
-      "Home Team Name": "Germany",
-      "Home Team Goals": 1,
-      "Away Team Goals": 0,
-      "Away Team Name": "Argentina",
-      "Win conditions": "Germany win after extra time",
-      "Attendance": 74738,
-      "Half-time Home Goals": 0,
-      "Half-time Away Goals": 0,
-      "Referee": "Nicola RIZZOLI (ITA)",
-      "Assistant 1": "Renato FAVERANI (ITA)",
-      "Assistant 2": "Andrea STEFANI (ITA)",
-      "RoundID": 255959,
-      "MatchID": 300186501,
-      "Home Team Initials": "GER",
-      "Away Team Initials": "ARG"
-    },
   ]
