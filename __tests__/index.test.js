@@ -74,7 +74,6 @@ describe('Task 3: getFinalsWinners', () => {
 
 describe('Task 4: getWinnersByYear', () => {
   const result = getFinalsWinnersByYear()
-  console.log(result)
   it('returns the right number of strings', () => {
     expect(result).toHaveLength(19)
   })
@@ -112,8 +111,16 @@ describe('Task 5: getCountryWins', () => {
     const result = getCountryWins('Spain')
     expect(result).toBe(1)
   })
+  it('returns 1 win for France', () => {
+    const result = getCountryWins('France')
+    expect(result).toBe(1)
+  })
   it('returns 1 win for England', () => {
     const result = getCountryWins('England')
+    expect(result).toBe(1)
+  })
+  it('returns 1 win for Uruguay', () => {
+    const result = getCountryWins('Uruguay')
     expect(result).toBe(1)
   })
   it('returns 3 wins for Germany FR', () => {
