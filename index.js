@@ -107,11 +107,10 @@ function getAverageFinalsGoals() {
     return { [team]: goalsByTeam[team].goalsScored / goalsByTeam[team].appearances } 
   })
 
-  goalsPerAppearance.sort((a, b) => {
+  goalsPerAppearance.sort((a, b) => { // optional
     return Object.values(b)[0] - Object.values(a)[0]
   })
-  console.log(goalsByTeam)
-  console.log(goalsPerAppearance)
+
   return goalsPerAppearance
 }
 

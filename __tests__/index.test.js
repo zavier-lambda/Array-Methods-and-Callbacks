@@ -143,7 +143,6 @@ describe('Task 5: getCountryWins', () => {
 
 describe('Task 6: getAverageFinalsGoals', () => {
   const result = getAverageFinalsGoals()
-  console.log(result)
 
   it('returns the right number of objects', () => {
     expect(result).toHaveLength(13)
