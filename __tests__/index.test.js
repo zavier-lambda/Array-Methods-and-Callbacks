@@ -13,7 +13,7 @@ const {
   getFinalsWinners,
   getFinalsWinnersByYear,
   getCountryWins,
-  // getGoals,
+  getAverageFinalsGoals,
   // badDefense,
   // getAverageGoals,
 } = funcs
@@ -138,5 +138,31 @@ describe('Task 5: getCountryWins', () => {
   it('returns 2 wins for Argentina', () => {
     const result = getCountryWins('Argentina')
     expect(result).toBe(2)
+  })
+})
+
+describe('Task 6: getAverageFinalsGoals', () => {
+  const result = getAverageFinalsGoals()
+  console.log(result)
+
+  it('returns the right number of objects', () => {
+    expect(result).toHaveLength(13)
+  })
+  it('returns the right objects', () => {
+    expect(result).toEqual(expect.arrayContaining(    [
+      { Uruguay: 4 },
+      { England: 4 },
+      { Brazil: 2.3333333333333335 },
+      { Hungary: 2 },
+      { Sweden: 2 },
+      { France: 2 },
+      { Italy: 1.8333333333333333 },
+      { 'Germany FR': 1.8333333333333333 },
+      { Argentina: 1.6 },
+      { Czechoslovakia: 1 },
+      { Spain: 1 },
+      { Netherlands: 0.6666666666666666 },
+      { Germany: 0.5 },
+    ]))
   })
 })

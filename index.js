@@ -74,12 +74,45 @@ function getCountryWins(country/* code here */) {
 }
 
 
-/* Task 6: Write a function called getGoals() that accepts a parameter `data` and calculates the team with the most goals score per appearance (avergae goals for) in the World Cup finals */
+/* Task 6: Write a function called getAverageFinalsGoals() that returns an array of objects, each object containing the name of a team as its single key, the value being the average number of goals scored per appearance in a final: [{ Uruguay: 4 }, { England: 4 } etc] */
 
-function getGoals(/* code here */) {
-
+function getAverageFinalsGoals() {
   /* code here */
+  const finals = getFinals()
 
+  const goalsByTeam = {}
+
+  finals.forEach(final => {
+    const homeTeam = final['Home Team Name']
+    const homeGoals = final['Home Team Goals']
+    const awayTeam = final['Away Team Name']
+    const awayGoals = final['Away Team Goals']
+
+    if (!goalsByTeam[homeTeam]) {
+      goalsByTeam[homeTeam] = { goalsScored: homeGoals, appearances: 1 }
+    } else {
+      goalsByTeam[homeTeam].goalsScored += homeGoals
+      goalsByTeam[homeTeam].appearances++
+    }
+
+    if (!goalsByTeam[awayTeam]) {
+      goalsByTeam[awayTeam] = { goalsScored: awayGoals, appearances: 1 }
+    } else {
+      goalsByTeam[awayTeam].goalsScored += awayGoals
+      goalsByTeam[awayTeam].appearances++
+    }
+  })
+
+  const goalsPerAppearance = Object.keys(goalsByTeam).map(team => {
+    return { [team]: goalsByTeam[team].goalsScored / goalsByTeam[team].appearances } 
+  })
+
+  goalsPerAppearance.sort((a, b) => {
+    return Object.values(b)[0] - Object.values(a)[0]
+  })
+  console.log(goalsByTeam)
+  console.log(goalsPerAppearance)
+  return goalsPerAppearance
 }
 
 
@@ -118,7 +151,7 @@ module.exports = {
   getFinalsWinners,
   getFinalsWinnersByYear,
   getCountryWins,
-  getGoals,
+  getAverageFinalsGoals,
   badDefense,
   getAverageGoals,
 }
