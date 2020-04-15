@@ -144,24 +144,24 @@ describe('Task 5: getCountryWins', () => {
 describe('Task 6: getAverageFinalsGoals', () => {
   const result = getAverageFinalsGoals()
 
-  it('returns the right number of objects', () => {
-    expect(result).toHaveLength(13)
+  it('returns an object with the correct number of teams', () => {
+    expect(Object.keys(result)).toHaveLength(13)
   })
-  it('returns the right objects', () => {
-    expect(result).toEqual(expect.arrayContaining(    [
-      { Uruguay: 4 },
-      { England: 4 },
-      { Brazil: 2.3333333333333335 },
-      { Hungary: 2 },
-      { Sweden: 2 },
-      { France: 2 },
-      { Italy: 1.8333333333333333 },
-      { 'Germany FR': 1.8333333333333333 },
-      { Argentina: 1.6 },
-      { Czechoslovakia: 1 },
-      { Spain: 1 },
-      { Netherlands: 0.6666666666666666 },
-      { Germany: 0.5 },
-    ]))
+  it('returns the the right avg goals scored per final appearance per team', () => {
+    expect(result).toMatchObject({
+      Uruguay: 4,
+      Argentina: 1.6,
+      Italy: 1.8333333333333333,
+      Czechoslovakia: 1,
+      Hungary: 2,
+      'Germany FR': 1.8333333333333333,
+      Brazil: 2.3333333333333335,
+      Sweden: 2,
+      England: 4,
+      Netherlands: 0.6666666666666666,
+      France: 2,
+      Germany: 0.5,
+      Spain: 1,
+    })
   })
 })
