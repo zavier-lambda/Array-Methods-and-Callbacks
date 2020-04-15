@@ -73,14 +73,14 @@ function getCountryWins(country/* code here */) {
 }
 
 
-/* Task 6: Write a function called getAverageFinalsGoals() that returns an object containing as properties the names of all teams with appearances in a final, and as values the average number of goals scored per appearance in a final */
+/* Task 6: Write a function called getAverageFinalsGoals() that returns an object containing as properties the names of all teams with appearances in a final, and as values the average number of goals scored per appearance (in a final) */
 
 function getAverageFinalsGoals() {
   /* code here */
   const finals = getFinals()
 
   const goalsByTeam = {}
-  const result = {}
+  const avgGoals = {}
 
   // aggregating team appearances and goals
   finals.forEach(final => {
@@ -106,10 +106,10 @@ function getAverageFinalsGoals() {
 
   // calculating avg number of goals per appearance
   Object.keys(goalsByTeam).forEach(team => {
-    result[team] = goalsByTeam[team].goalsScored / goalsByTeam[team].appearances
+    avgGoals[team] = goalsByTeam[team].goalsScored / goalsByTeam[team].appearances
   })
 
-  return result
+  return avgGoals
 }
 
 
