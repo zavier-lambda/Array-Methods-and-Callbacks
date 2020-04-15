@@ -16,16 +16,14 @@ const data = require("./data.js");
 
 function getFinals() {
   /* code here */
-  const result = data.filter(game => game.Stage === 'Final')
-  return result
+  return data.filter(game => game.Stage === 'Final')
 }
 
 /* Task 2: Implement a function called `getFinalsYears` that returns an array containing all of the years of finals in the dataset */
 
 function getFinalsYears() {
   /* code here */
-  const result = getFinals().map(match => match.Year)
-  return result
+  return getFinals().map(match => match.Year)
 }
 
 
@@ -50,6 +48,7 @@ function getFinalsWinners() {
  */
 
 function getFinalsWinnersByYear() {
+  /* code here */
   const winners = getFinalsWinners()
   const years = getFinalsYears()
 
@@ -74,7 +73,7 @@ function getCountryWins(country/* code here */) {
 }
 
 
-/* Task 6: Write a function called getAverageFinalsGoals() that returns an array of objects, each object containing the name of a team as its single key, the value being the average number of goals scored per appearance in a final: [{ Uruguay: 4 }, { England: 4 } etc] */
+/* Task 6: Write a function called getAverageFinalsGoals() that returns an array of objects, each object containing the name of a team as its single key, the value being the average number of goals scored per appearance in a final: [{ Uruguay: 4 }, { England: 4 }, etc] */
 
 function getAverageFinalsGoals() {
   /* code here */
