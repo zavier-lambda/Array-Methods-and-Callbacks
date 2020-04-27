@@ -14,7 +14,7 @@ const {
   getFinalsWinnersByYear,
   getCountryWins,
   getAverageFinalsGoals,
-  // badDefense,
+  badDefense,
   // getAverageGoals,
 } = funcs
 
@@ -163,5 +163,13 @@ describe('Task 6: getAverageFinalsGoals', () => {
       Germany: 0.5,
       Spain: 1,
     })
+  })
+})
+
+describe('Task 7: badDefense', () => {
+  const result = badDefense()
+console.log(result)
+  it('returns an object with the correct number of teams', () => {
+    expect(5).toBe(13)
   })
 })

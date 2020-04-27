@@ -19,6 +19,7 @@ function getFinals() {
   return data.filter(game => game.Stage === 'Final')
 }
 
+
 /* Task 2: Implement a function called `getFinalsYears` that returns an array containing all of the years of finals in the dataset */
 
 function getFinalsYears() {
@@ -113,12 +114,29 @@ function getAverageFinalsGoals() {
 }
 
 
-/* Task 7: Write a function called badDefense() that accepts a parameter `data` and calculates the team with the most goals scored against them per appearance (avergae goals against) in the World Cup finals */
+/* Task 7: Write a function called badDefense() that returns an object containig the name of the team with the most goals scored against in a single finals game paired with the number of goals scored against in that game, i.e.: { Germany: 7 }. If there are several teams with the same number of goals include them all in the result, i.e.: { Germany: 7, Spain: 7 } */
 
 function badDefense(/* code here */) {
 
   /* code here */
+  const finals = getFinals()
 
+  const result = []
+
+  const goalsAgainst = finals.reduce((acc, final) => {
+    const homeTeam = final['Home Team Name']
+    const homeGoals = final['Home Team Goals']
+    const awayTeam = final['Away Team Name']
+    const awayGoals = final['Away Team Goals']
+
+    return acc.concat({ [homeTeam]: awayGoals }, { [awayTeam]: homeGoals})
+  }, result)
+
+  goalsAgainst.sort((a, b) => {
+    return Object.values(b)[0] - Object.values(a)[0]
+  })
+
+  return goalsAgainst
 }
 
 
